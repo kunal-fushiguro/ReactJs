@@ -1,0 +1,7 @@
+{
+  "present": ["@babel/preset-env", "@babel/preset-react"]
+}
+
+//   we are using babelrc for trans filings
+// @babel/preset-env for convert es6 to es5
+// @babel/preset-react for browser to understand jsx or react react dom
