@@ -12,10 +12,10 @@ Install webpack
 
         npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader html-webpack-plugin sass sass-loader style-loader url-loader webpack webpack-cli webpack-dev-server
 
-Create <mark style="background-color: #FFFF00">.babelrc</mark> file
+Create <mark>.babelrc</mark> file
 
         {
-            "present" : ["@babel/preset-env","@babel/preset-react"]
+            "presets": ["@babel/preset-env", "@babel/preset-react"]
         }
 
 Create a webpack.config.js file
@@ -34,7 +34,7 @@ Create a webpack.config.js file
             }),
         ],
         devServer: {
-            port: 3030, // you can change the port
+            port: 3000, // you can change the port
         },
         module: {
             rules: [
@@ -57,3 +57,32 @@ Create a webpack.config.js file
             ],
         },
         };
+
+Create src folder and put/create index.html and index.js file there
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create React With webpack</title>
+        </head>
+        <body>
+        <div id="root"></div>
+        </body>
+        <script src="./index.js"></script>
+        </html>
+
+in index.js file import React and ReactDOM
+
+        import React from "react";
+        import ReactDOM from "react-dom/client";
+        const div = React.createElement("div", { className: "text" }, "hello react");
+        console.log(div);
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        console.log(root);
+        root.render(div);
+
+Run the Server
+
+        npm run serve
