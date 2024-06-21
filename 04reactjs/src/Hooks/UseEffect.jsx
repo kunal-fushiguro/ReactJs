@@ -8,7 +8,7 @@ const UseEffect = () => {
     }
   }, [count]);
   return (
-    <d-v>
+    <div>
       <h2>{count}</h2>
       <button onClick={() => setCount((perv) => perv - 1)}>
         Minus the Value
@@ -17,7 +17,7 @@ const UseEffect = () => {
       <button onClick={() => setCount((perv) => perv + 1)}>
         Plus the value
       </button>
-    </d-v>
+    </div>
   );
 };
 

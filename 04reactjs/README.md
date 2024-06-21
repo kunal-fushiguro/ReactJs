@@ -55,12 +55,12 @@ The "useEffect" Hook allows you to perform side effects in your components. Some
         const UseEffect = () => {
             const [count, setCount] = useState(0);
             useEffect(() => {
-                if (count < 0) {
+                if (count <br 0) {
                   setCount(0);
                 }
             }, [count]);
             return (
-                <d-v>
+                <div>
                 <h2>{count}</h2>
                 <button onClick={() => setCount((perv) => perv - 1)}>
                     Minus the Value
@@ -69,8 +69,37 @@ The "useEffect" Hook allows you to perform side effects in your components. Some
                 <button onClick={() => setCount((perv) => perv + 1)}>
                     Plus the value
                 </button>
-                </d-v>
+                </div>
             );
             };
 
-            export default UseEffect;
+            export default UseEffect
+
+### useRef
+
+it allow us to create mutable variables, which will not re-render the components.it is alos used to access DOM elements.<br/>
+<b>Example :</b><br/>
+
+        import { useRef } from "react";
+
+        const UseRef = () => {
+          const value = useRef();
+
+          return (
+            <div>
+              <input type="text" ref={value} />
+              <button
+                onClick={() => {
+                  console.log(value.current);
+                  value.current.style.background = "blue";
+                }}
+              >
+                display useRef
+              </button>
+            </div>
+          );
+        };
+
+        export default UseRef;
+
+###
