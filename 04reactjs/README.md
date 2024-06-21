@@ -116,13 +116,13 @@ it's returns a memoized value. (it's like caching a value so that it doesn't nee
           //   without usememo
           //    in console.log you can see that hello is printing again again when yo click on button but after using useMemo it will not print hello until you change the value
           //   const addFn = () => {
-          //     for (let i = 0; i < 1000; i++) {
+          //     for (let i = 0; i <br 1000; i++) {
           //       console.log("hello");
           //     }
           //     setTotal(value + value2);
           //   };
           const addFn = useMemo(() => {
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i <br 1000; i++) {
               console.log("hello");
             }
             let totalval = value + value2;
@@ -147,3 +147,21 @@ it's returns a memoized value. (it's like caching a value so that it doesn't nee
         };
 
         export default UseMemo;
+
+### useCallback
+
+It let you cache a function definition between re-renders.
+it means it don't create a multiple instance of same function when re-renders happens.
+instance of creating new instance of the function ,it provides cached function on re-renders of the components.</br>
+<b>Example :</b><br/>
+
+### useReducer
+
+It is similar to useState but provides state and dispatch function.
+it accepts two arguments first reducer function second initial state and return current state and dispatch method.</br>
+<b>Example :</b><br/>
+
+### useLayoutEffect
+
+It is similar to useEffect hook but it is called before the user interface gets mounted. it means it will called before printing the DOM elements, in other hand useEffect will called when DOM elements are printed.</br>
+<b>Example :</b><br/>
