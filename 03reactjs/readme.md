@@ -98,3 +98,6 @@ React render application using VDOM(virtual DOM (documents object model)).<br/>
 
 ### Purity
 It's tell us how react components should work.pure react components means that the same input should always return the same output.it should only return JSX and not change stuff that existed before rendering.
+
+### Strict Mode
+It is a react component that wrapped our application to prevent or detect problems while developing our application.
