@@ -1,5 +1,4 @@
 # Inserting text
-
-    using pure javascript
-    using React cdn (with help of React and ReactDOM )
-    know what React.createElemnt , ReactDOM.createRoot , and .render do
+using pure javascript <br/>
+using React cdn (with help of React and ReactDOM ) <br/>
+know what React.createElemnt , ReactDOM.createRoot , and .render do <br/>
