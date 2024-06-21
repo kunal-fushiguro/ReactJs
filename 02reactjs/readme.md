@@ -83,6 +83,11 @@ in index.js file import React and ReactDOM
         console.log(root);
         root.render(div);
 
+Add script on package.json file
+
+        "serve": "webpack serve --mode development",
+        "build": "webpack --mode production"
+
 Run the Server
 
         npm run serve
