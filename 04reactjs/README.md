@@ -221,13 +221,40 @@ instance of creating new instance of the function ,it provides cached function o
       )
     }
 
-export default memo(Navbar)
+    export default memo(Navbar)
 
 ### useReducer
 
 It is similar to useState but provides state and dispatch function.
 it accepts two arguments first reducer function second initial state and return current state and dispatch method.</br>
 <b>Example :</b><br/>
+
+    import { useReducer } from "react";
+
+    const UseReducer = () => {
+      const reducerFn = (state, action) => {
+        switch (action.type) {
+          case "add":
+            return state + 1;
+          case "sub":
+            return state - 1;
+          default:
+            return state;
+        }
+      };
+      const [state, dispatch] = useReducer(reducerFn, 0);
+      return (
+        <>
+          <div>
+            <button onClick={() => dispatch({ type: "add" })}>Increment</button>
+            <span>{state}</span>
+            <button onClick={() => dispatch({ type: "sub" })}>Decrement</button>
+          </div>
+        </>
+      );
+    };
+
+    export default UseReducer;
 
 ### useLayoutEffect
 
