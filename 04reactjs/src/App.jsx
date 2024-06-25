@@ -5,6 +5,7 @@ import UseEffect from "./Hooks/UseEffect";
 import UseRef from "./Hooks/UseRef";
 import UseMemo from "./Hooks/UseMemo";
 import UseReducer from "./Hooks/UseReducer";
+import UseLayoutEffect from "./Hooks/UseLayoutEffect";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
         <Route Component={UseRef} path="/useref" />
         <Route Component={UseMemo} path="/usememo" />
         <Route Component={UseReducer} path="/usereducer" />
+        <Route Component={UseLayoutEffect} path="/uselayout" />
       </Routes>
     </>
   );
