@@ -154,6 +154,74 @@ It let you cache a function definition between re-renders.
 it means it don't create a multiple instance of same function when re-renders happens.
 instance of creating new instance of the function ,it provides cached function on re-renders of the components.</br>
 <b>Example :</b><br/>
+<mark>App.jsx</mark><br/>
+
+      import { useState, useCallback } from 'react'
+      import reactLogo from './assets/react.svg'
+      import viteLogo from '/vite.svg'
+      import './App.css'
+      import Navbar from './components/Navbar'
+
+      function App() {
+        const [count, setCount] = useState(0)
+        const [count2, setCount2] = useState(0)
+        const [adjective, setAdjective] = useState("good")
+
+        // const getAdjective = () => {
+        //   return "another" + count
+        // }
+
+        const getAdjective = useCallback(() => {
+          return "another" + count
+        },[count] )
+
+
+
+        return (
+          <>
+            <Navbar adjective={"good"} getAdjective={getAdjective} />
+            <div>
+              <a href="https://vitejs.dev" target="_blank">
+                <img src={viteLogo} className="logo" alt="Vite logo" />
+              </a>
+              <a href="https://react.dev" target="_blank">
+                <img src={reactLogo} className="logo react" alt="React logo" />
+              </a>
+            </div>
+            <h1>Vite + React</h1>
+            <div className="card">
+              <button onClick={() => setCount((count) => count + 1)}>
+                count is {count}
+              </button>
+              <p>
+                Edit <code>src/App.jsx</code> and save to test HMR
+              </p>
+            </div>
+            <p className="read-the-docs">
+              Click on the Vite and React logos to learn more
+            </p>
+          </>
+        )
+      }
+
+      export default App
+
+<mark>Navbar.jsx</mark></br>
+
+    import React from 'react'
+    import { memo } from 'react'
+
+    const Navbar = ({adjective, getAdjective}) => {
+        console.log("Navbar is rendered")
+      return (
+        <div>
+          I am a {adjective} Navbar
+          <button onClick={()=>{getAdjective()}}>{getAdjective()}</button>
+        </div>
+      )
+    }
+
+export default memo(Navbar)
 
 ### useReducer
 
